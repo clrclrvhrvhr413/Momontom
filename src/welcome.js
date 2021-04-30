@@ -1,16 +1,16 @@
-const div = document.querySelector(".welcomeContainer"),
-    askForm = div.querySelector(".js-userNameForm"),
+const welDiv = document.querySelector(".welcomeContainer"),
+    askForm = welDiv.querySelector(".js-userNameForm"),
     userName = askForm.querySelector("#userName");
-const div2 = div.querySelector(".logContainer"),
-    welcome = div2.querySelector(".welcome"),
-    btn = div2.querySelector("#logout");
+const welDiv2 = welDiv.querySelector(".js-logContainer"),
+    welcome = welDiv2.querySelector(".js-welcome"),
+    logoutbtn = welDiv2.querySelector("#js-logout");
 
 const USER = "userName",
     SHOW_CLS = "showing";
 
 function logoutUser(){
     localStorage.removeItem(USER);
-    div2.classList.remove(SHOW_CLS);
+    welDiv2.classList.remove(SHOW_CLS);
     askForm.classList.add(SHOW_CLS);
     userName.value="";
 }
@@ -23,11 +23,11 @@ function saveUser(name){
 }
 function welcomeUser(name){
     askForm.classList.remove(SHOW_CLS);
-    div2.classList.add(SHOW_CLS);
+    welDiv2.classList.add(SHOW_CLS);
     welcome.innerHTML = `WELCOME ${name}`;
     saveUser(name);
 
-    btn.addEventListener("click",handleLogout);
+    logoutbtn.addEventListener("click",handleLogout);
 }
 function handleSubmit(event){
     event.preventDefault();
