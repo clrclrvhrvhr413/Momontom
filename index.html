@@ -13,14 +13,31 @@
     <h1 class="js-clock"></h1>
     <div class="welcomeContainer">
         <form class="js-userNameForm userNameForm">
-            <input type="text" id="userName" placeholder="what's your name?">
+            <input type="text" id="userName" placeholder="what's your name?" />
         </form>
-        <div class="logContainer">
-            <h3 class="welcome"></h3>
-            <button id="logout">logout</button>
+        <div class="js-logContainer logContainer">
+            <h3 class="js-welcome"></h3>
+            <button id="js-logout">logout</button>
+        </div>
+    </div>
+    <div class="todoCont">
+        <h2>To Do List</h2>
+        <form class="js-todoForm">
+            <input type="text" placeholder="to do" id="todo" />
+        </form>
+        <div class="todoListCont">
+            <div>
+                <h4>TO DO</h4><hr/>
+                <ul class="js-doing todoUL"></ul>
+            </div>
+            <div>
+                <h4>DONE</h4><hr/>
+                <ul class="js-done todoUL"></ul>
+            </div>
         </div>
     </div>
 
+    <script src="src/todoList.js"></script>
     <script src="src/welcome.js"></script>
     <script src="src/clock.js"></script>
 </body>

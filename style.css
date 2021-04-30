@@ -1,7 +1,31 @@
+body {
+    align-items: center;
+}
 .userNameForm,
 .logContainer {
     display: none;
 }
 .showing {
     display: block;
+}
+.todoCont {
+    text-align: center;
+}
+.todoListCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.todoListCont div, hr {
+    width: 400px;
+}
+ul {
+    padding-inline-start: 0px;
+    text-align: left;
+    list-style: none;
+}
+.todobtn {
+    padding: 0 5px;
+    border: none;
+    background: none;
 }
