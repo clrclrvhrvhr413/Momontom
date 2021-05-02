@@ -1,7 +1,30 @@
 body {
     align-items: center;
-    color: white;
+    color:whitesmoke;
     background-color: #463f3a;
+}
+.menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.menu div,
+.logContainer p {
+    padding:0 10px;
+    margin: 0;
+    font-size: large;
+}
+.logContainer {
+    position: relative;
+}
+.logContainer button{
+    position: absolute;
+    right: 10px;
+    top :3px;
+}
+.logContainer p{
+    position: inherit;
+    right: 50px;
 }
 .userNameForm,
 .logContainer {
@@ -10,24 +33,46 @@ body {
 .showing {
     display: block;
 }
-.weather,
+/* ---------------------------------- */
+.weatherIcon,
+.clock,
 .todoCont {
     text-align: center;
+}
+.weatherIcon{
+    height: 150px;
+}
+.clock {
+    font-size: 100px;
+    margin: 3px;
+}
+.todoCont form span, input,
+.userNameForm{
+    font-size: 17px;
 }
 .todoListCont{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
-.todoListCont div, hr {
+.todoListCont div, hr,
+#todo {
     width: 400px;
 }
 ul {
     border: rgb(133, 131, 131) 3px solid;
     border-radius: 3%;
-    padding-inline-start: 0px;
+    padding-inline-start: 5px;
+    padding-block: 10px;
     text-align: left;
     list-style: none;
+}
+ul li span {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 320px;
 }
 .todobtn {
     padding: 0 5px;

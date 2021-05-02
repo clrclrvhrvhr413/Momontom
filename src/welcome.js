@@ -1,4 +1,5 @@
-const welDiv = document.querySelector(".welcomeContainer"),
+const menu = document.querySelector(".menu"),
+    welDiv = menu.querySelector(".welcomeContainer"),
     askForm = welDiv.querySelector(".js-userNameForm"),
     userName = askForm.querySelector("#userName");
 const welDiv2 = welDiv.querySelector(".js-logContainer"),

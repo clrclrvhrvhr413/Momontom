@@ -10,29 +10,38 @@
 </head>
 
 <body>
-    <h1 class="js-clock"></h1>
-    <div class="welcomeContainer">
-        <form class="js-userNameForm userNameForm">
-            <input type="text" id="userName" placeholder="what's your name?" />
-        </form>
-        <div class="js-logContainer logContainer">
-            <h3 class="js-welcome"></h3>
-            <button id="js-logout">logout</button>
+    <div class="menu">
+        <div class="js-weather weather"></div>
+
+        <div class="welcomeContainer">
+            <form class="js-userNameForm userNameForm">
+                <input type="text" id="userName" placeholder="what's your name?" />
+            </form>
+
+            <div class="js-logContainer logContainer">
+                <p class="js-welcome"></p>
+                <button id="js-logout">logout</button>
+            </div>
         </div>
     </div>
-    <div class="js-weather weather"></div>
+
+    <div class="weatherIcon"></div>
+    <p class="js-clock clock"></p>
+
     <div class="todoCont">
-        <h2>To Do List</h2>
         <form class="js-todoForm">
+            <span>Tell me what </span>
             <input type="text" placeholder="to do" id="todo" />
         </form>
         <div class="todoListCont">
             <div>
-                <h4>TO DO</h4><hr/>
+                <h4>TO DO</h4>
+                <hr />
                 <ul class="js-doing todoUL"></ul>
             </div>
             <div>
-                <h4>DONE</h4><hr/>
+                <h4>DONE</h4>
+                <hr />
                 <ul class="js-done todoUL"></ul>
             </div>
         </div>
