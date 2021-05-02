@@ -11,17 +11,18 @@ let TODO_LIST = [];
 function handleCheck(event) {
     const btn = event.target,
         li = btn.parentNode;
-    const findout = TODO_LIST.find(element => { return element.id === parseInt(li.id) });
+    let findout = TODO_LIST.find(element => { return element.id === parseInt(li.id,10) });
 
     if (findout.isdone === false) {
-        done.appendChild(li);
         findout.isdone = true;
-        btn.innerHTML = "😬";
+        btn.innerText = "😬";
+        done.appendChild(li);
     } else {
-        doing.appendChild(li);
         findout.isdone = false;
         btn.innerHTML = "✅";
+        doing.appendChild(li);
     }
+    saveTodo(TODO_LIST);
 }
 function handleDelete(event) {
     const li = event.target.parentNode;
@@ -38,30 +39,31 @@ function handleDelete(event) {
 function saveTodo(DoObj) {
     localStorage.setItem(LIST, JSON.stringify(DoObj));
 }
-function addList(text) {
+function addList(text,doneCheck) {
     const li = document.createElement("li"),
         delbtn = document.createElement("button"),
         checkbtn = document.createElement("button"),
         span = document.createElement("span"),
         id = TODO_LIST.length + 1,
-        isdone = false;
+        isdone = doneCheck===undefined?false:doneCheck;
 
     span.innerHTML = text;
     delbtn.innerHTML = "❌";
-    if (isdone === false) {
-        checkbtn.innerHTML = "✅";
-
-    } else {
-        checkbtn.innerHTML = "😬";
-    }
     delbtn.classList.add(BTN_CLS);
     checkbtn.classList.add(BTN_CLS);
-
     li.appendChild(delbtn);
     li.appendChild(checkbtn);
     li.appendChild(span);
     li.id = id;
-    doing.appendChild(li);
+    if (isdone === false) {
+        checkbtn.innerHTML = "✅";
+        doing.appendChild(li);
+
+    } else {
+        checkbtn.innerHTML = "😬";
+        done.appendChild(li);
+    }
+
 
     const DoObj = {
         text: text,
@@ -85,7 +87,7 @@ function loadList() {
     const list = localStorage.getItem(LIST);
     if (list !== null) {
         const arr = JSON.parse(list);
-        arr.forEach(element => { addList(element.text); });
+        arr.forEach(element => { addList(element.text,element.isdone); });
     }
 }
 function init() {

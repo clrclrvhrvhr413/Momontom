@@ -8,10 +8,13 @@ body {
     flex-direction: row;
     justify-content: space-between;
 }
+.menu .weather {
+    font-style: italic;
+}
 .menu div,
 .logContainer p {
     padding:0 10px;
-    margin: 0;
+    margin: 5px;
     font-size: large;
 }
 .logContainer {
@@ -40,11 +43,12 @@ body {
     text-align: center;
 }
 .weatherIcon{
+    margin-top: 80px;
     height: 150px;
 }
 .clock {
     font-size: 100px;
-    margin: 3px;
+    margin: 3px 3px 100px;
 }
 .todoCont form span, input,
 .userNameForm{

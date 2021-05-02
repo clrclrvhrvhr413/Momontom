@@ -11,8 +11,8 @@ function getWeather(lat,lon){
         return response.json();
     }).then(function(json){
         const icon = json.weather[0]['icon'];
-        image.src = `http://openweathermap.org/img/wn/${icon}@4x.png`
-        weather.innerHTML = `${json.name} ${json.main.temp}ºC`;
+        image.src = `http://openweathermap.org/img/wn/${icon}@4x.png`;
+        weather.innerHTML = `🚩${json.name} § ${json.main.temp}ºC § ${json.weather[0].main}`;
         weatherIcon.appendChild(image);
     });
 }
