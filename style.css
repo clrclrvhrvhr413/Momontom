@@ -95,7 +95,7 @@ ul li span {
     animation: fadeIn 1s linear;
 }
 
-@keyframes fadIn {
+@keyframes fadeIn {
     from{
         opacity: 0;
     }to{
